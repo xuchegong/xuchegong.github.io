@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Xuche Gong</title>
+<meta name="description" content="Xuche Gong, Assistant Professor of Agricultural Economics at Mississippi State University. Research on crop insurance, farmer decision-making under risk, and behavioral economics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#FBFAF9;
+  --surface:#FFFFFF;
+  --ink:#1F1B1C;
+  --muted:#675F61;
+  --rule:#E7E1E1;
+  --accent:#5E1A2A;
+  --accent-soft:#F3E9EB;
+  --link:#7A2436;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:"Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#161314; --surface:#1E1A1B; --ink:#ECE6E7; --muted:#A99FA1;
+    --rule:#342D2F; --accent:#D9909E; --accent-soft:#3A2228; --link:#E3A3AF;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#161314; --surface:#1E1A1B; --ink:#ECE6E7; --muted:#A99FA1;
+  --rule:#342D2F; --accent:#D9909E; --accent-soft:#3A2228; --link:#E3A3AF;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font:400 17px/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--link); text-decoration-thickness:1px; text-underline-offset:3px}
+a:hover{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+img{max-width:100%; display:block}
+
+.wrap{
+  max-width:1120px; margin:0 auto;
+  padding-inline:24px; padding-block:56px 40px;
+  display:grid; grid-template-columns:280px minmax(0,1fr); gap:72px;
+}
+
+/* profile column */
+.profile{position:sticky; top:calc(env(safe-area-inset-top,0px) + 40px); align-self:start;
+  display:flex; flex-direction:column; gap:20px}
+.portrait{width:200px; height:auto; aspect-ratio:4/5; object-fit:cover; border-radius:4px;
+  background:var(--rule)}
+.name{font:500 40px/1.05 var(--serif); letter-spacing:-.01em; margin:0}
+.role{margin:0; color:var(--muted); font-size:16px; line-height:1.45}
+.role strong{color:var(--ink); font-weight:600; display:block}
+.contact{display:flex; flex-direction:column; gap:4px; font-size:15px; margin:0; padding:0; list-style:none}
+.contact li{color:var(--muted)}
+.contact a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule)}
+.contact a:hover{border-color:var(--accent); color:var(--accent)}
+.links{display:flex; flex-wrap:wrap; gap:8px}
+.btn{display:inline-block; font:500 13px/1 var(--mono); letter-spacing:.02em;
+  padding:9px 12px; border:1px solid var(--rule); border-radius:3px;
+  color:var(--ink); text-decoration:none; background:var(--surface)}
+.btn:hover{border-color:var(--accent); color:var(--accent)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--ground)}
+.btn.primary:hover{color:var(--ground); opacity:.9}
+.nav{display:flex; flex-direction:column; gap:2px; border-top:1px solid var(--rule); padding-top:16px}
+.nav a{font:500 12px/2 var(--mono); letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted); text-decoration:none}
+.nav a:hover{color:var(--accent)}
+
+/* main column */
+main{display:flex; flex-direction:column; gap:64px; min-width:0}
+section{scroll-margin-top:32px}
+h2{font:500 28px/1.2 var(--serif); margin:0 0 20px; letter-spacing:-.005em;
+  display:flex; align-items:baseline; gap:14px}
+h2::after{content:""; flex:1; height:1px; background:var(--rule); transform:translateY(-6px)}
+h3{font:600 13px/1.4 var(--mono); letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted); margin:36px 0 14px}
+h3:first-of-type{margin-top:8px}
+.lede{font:400 23px/1.45 var(--serif); margin:0 0 18px; max-width:34em; text-wrap:pretty}
+p{margin:0 0 14px; max-width:40em}
+.interests{display:flex; flex-wrap:wrap; gap:8px; padding:0; margin:18px 0 0; list-style:none}
+.interests li{font-size:14px; padding:5px 11px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent)}
+
+/* news */
+.news{list-style:none; margin:0; padding:0; display:flex; flex-direction:column}
+.news li{display:grid; grid-template-columns:96px 1fr; gap:16px; padding:11px 0;
+  border-bottom:1px solid var(--rule)}
+.news li:first-child{padding-top:0}
+.news time{font:400 13px/1.9 var(--mono); color:var(--muted); font-variant-numeric:tabular-nums}
+
+/* papers */
+.papers{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:22px}
+.paper .title{font:500 20px/1.3 var(--serif); margin:0 0 4px; text-wrap:balance}
+.paper .title a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule)}
+.paper .title a:hover{color:var(--accent); border-color:var(--accent)}
+.paper .meta{margin:0; color:var(--muted); font-size:15.5px; max-width:none}
+.paper .meta em{color:var(--ink)}
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; align-items:center}
+.tag{font:500 11.5px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase;
+  padding:5px 8px; border-radius:3px; border:1px solid var(--rule); color:var(--muted)}
+.tag.status{border-color:var(--accent); color:var(--accent)}
+.tag.award{background:var(--accent-soft); border-color:transparent; color:var(--accent)}
+.tags a{font:500 12px/1 var(--mono); letter-spacing:.04em}
+.wip .paper .title{font-size:18px}
+
+/* teaching */
+.courses{list-style:none; margin:0; padding:0}
+.courses li{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 24px;
+  padding:13px 0; border-bottom:1px solid var(--rule)}
+.courses .course{font-weight:600}
+.courses .code{font:500 13px/1 var(--mono); color:var(--accent); margin-right:8px; letter-spacing:.03em}
+.courses .where{grid-column:1; color:var(--muted); font-size:15.5px}
+.courses .terms{grid-column:2; grid-row:1 / span 2; align-self:center; text-align:right;
+  font:400 13px/1.6 var(--mono); color:var(--muted); font-variant-numeric:tabular-nums}
+
+.cv-row{display:flex; flex-wrap:wrap; gap:16px 24px; align-items:center}
+.cv-row p{margin:0; color:var(--muted)}
+
+footer{grid-column:1 / -1; border-top:1px solid var(--rule); padding-top:20px;
+  font:400 13px/1.6 var(--mono); color:var(--muted); display:flex; flex-wrap:wrap; gap:8px 24px;
+  justify-content:space-between}
+
+@media (max-width: 860px){
+  .wrap{grid-template-columns:1fr; gap:48px; padding-block:32px 32px; padding-inline:20px}
+  .profile{position:static; display:grid; grid-template-columns:120px 1fr; gap:16px 20px; align-items:start}
+  .portrait{width:120px; grid-row:span 2}
+  .name{font-size:32px}
+  .contact,.links,.nav{grid-column:1 / -1}
+  .nav{flex-direction:row; flex-wrap:wrap; gap:4px 18px}
+  .lede{font-size:20px}
+}
+@media (max-width: 480px){
+  .news li{grid-template-columns:1fr; gap:0}
+  .courses li{grid-template-columns:1fr}
+  .courses .terms{grid-column:1; grid-row:auto; text-align:left}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <aside class="profile">
+    <img class="portrait" src="photo.jpg" alt="Portrait of Xuche Gong" width="440" height="550">
+    <div>
+      <h1 class="name">Xuche Gong</h1>
+    </div>
+    <p class="role"><strong>Assistant Professor</strong>Department of Agricultural Economics<br>Mississippi State University</p>
+    <ul class="contact">
+      <li><a href="mailto:xg83@msstate.edu">xg83@msstate.edu</a></li>
+      <li>Office: 662-325-0413</li>
+      <li>321 Lloyd-Ricks-Watson Building<br>Mississippi State, MS 39762</li>
+    </ul>
+    <div class="links">
+      <a class="btn primary" href="XUCHE_GONG_CV_2026-09-23.pdf">CV (PDF)</a>
+      <a class="btn" href="https://orcid.org/0009-0001-7156-3623">ORCID</a>
+      <a class="btn" href="https://www.agecon.msstate.edu/people/xg83">Dept. page</a>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#cv">CV</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="about">
+      <p class="lede">I study how farmers make risk management decisions, with a focus on crop insurance.</p>
+      <p>I am an Assistant Professor in the Department of Agricultural Economics at Mississippi State University. I received my Ph.D. in Agricultural Economics from Iowa State University in 2024.</p>
+      <p>My work combines microeconomic theory, behavioral economics, and farm-level survey and administrative data to understand why farmers choose the coverage they do, and what those choices mean for farm income, program design, and the environment.</p>
+      <ul class="interests" aria-label="Research interests">
+        <li>Behavioral economics of risk management</li>
+        <li>Crop insurance design and policy</li>
+        <li>Farmer decision-making under risk</li>
+        <li>Agricultural and environmental policy</li>
+      </ul>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news">
+        <li><time datetime="2026-07">Jul 2026</time><span>Presented &ldquo;Does Dairy Revenue Protection Accelerate Dairy Consolidation?&rdquo; at the AAEA Annual Meeting in Kansas City.</span></li>
+        <li><time datetime="2025-07">Jul 2025</time><span>Presented &ldquo;Adverse Selection in Crop Insurance&rdquo; at the AAEA Annual Meeting in Denver.</span></li>
+        <li><time datetime="2025">Winter 2025</time><span>New article in <em>Agricultural Policy Review</em> on what drives farmers&rsquo; coverage level choices.</span></li>
+        <li><time datetime="2024-08">Aug 2024</time><span>Joined the Department of Agricultural Economics at Mississippi State University.</span></li>
+        <li><time datetime="2023">2023</time><span>Received the AAEA Applied Risk Analysis Section Best Paper Award.</span></li>
+      </ul>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+
+      <h3>Publications</h3>
+      <ol class="papers">
+        <li class="paper">
+          <p class="title"><a href="https://doi.org/10.1111/ajae.12342">Systemic Risk, Relative Subsidy Rates, and Area Yield Insurance Choice</a></p>
+          <p class="meta">with David A. Hennessy and Hongli Feng. <em>American Journal of Agricultural Economics</em>, 2023, 105(3): 888&ndash;913.</p>
+          <div class="tags"><span class="tag status">Published</span><span class="tag award">AAEA ARA Best Paper Award</span></div>
+        </li>
+      </ol>
+
+      <h3>Working papers</h3>
+      <ol class="papers">
+        <li class="paper">
+          <p class="title">Break-Even Reference Dependence in Crop Insurance Decisions: Theory and Evidence</p>
+          <p class="meta">with Hongli Feng, David A. Hennessy, Jennifer Ifft, Robert Shupp, and Michel Regenwetter</p>
+          <div class="tags"><span class="tag status">Revise &amp; resubmit, AJAE</span><a href="http://www.card.iastate.edu/products/publications/pdf/25wp670.pdf">Earlier version (CARD WP)</a></div>
+        </li>
+        <li class="paper">
+          <p class="title">Reframing Underinsurance: Contract Displays and Coverage Choices in the U.S. Federal Crop Insurance Program</p>
+          <p class="meta">with Hongli Feng, David A. Hennessy, Jennifer Ifft, and Robert Shupp</p>
+        </li>
+        <li class="paper">
+          <p class="title">Does Dairy Revenue Protection Accelerate Dairy Consolidation?</p>
+          <p class="meta">with Sungmin Cheu, Seowoo Lee, and Yunsun Park</p>
+        </li>
+        <li class="paper">
+          <p class="title">Basis Risk, Area Yield Insurance, and Technology Adoption</p>
+          <p class="meta">with David A. Hennessy and Hongli Feng</p>
+        </li>
+        <li class="paper">
+          <p class="title">Modeling Growers&rsquo; SNA Decisions and Evaluating the Economic and Environmental Outcomes of Crop Insurance Policies</p>
+          <p class="meta">with Hongli Feng and David A. Hennessy</p>
+        </li>
+        <li class="paper">
+          <p class="title">Adverse Selection in Crop Insurance: Evidence from Farmers&rsquo; Risk Perceptions and Insurance Returns</p>
+          <p class="meta">with Hongli Feng and David A. Hennessy</p>
+        </li>
+      </ol>
+
+      <h3>Work in progress</h3>
+      <ol class="papers wip">
+        <li class="paper"><p class="title">Premium heterogeneity in crop insurance</p><p class="meta">with Ardian Harri, Hongli Feng, and Keith Coble</p></li>
+        <li class="paper"><p class="title">Can ECO/SCO Replace ad hoc Disaster Payments?</p><p class="meta">with Mambo-Mary Anye and Will Maples</p></li>
+        <li class="paper"><p class="title">Crop Insurance and Rural Labor Allocation</p><p class="meta">with Xiaoyin Li and Sungmin Cheu</p></li>
+        <li class="paper"><p class="title">Basis Risk and Insurance Decisions in Pasture, Rangeland, and Forage Crop Insurance</p><p class="meta">with Yuyuan Che</p></li>
+        <li class="paper"><p class="title">Framing Crop Insurance: Coverage Demand under Proportional Deductible and Absolute Deductible Policies</p><p class="meta">with David A. Hennessy and Hongli Feng</p></li>
+      </ol>
+
+      <h3>Extension</h3>
+      <ol class="papers">
+        <li class="paper">
+          <p class="title"><a href="https://agpolicyreview.card.iastate.edu/what-factors-influence-crop-insurance-coverage-level-choices-learning-experiences-and-perceptions">What Factors Influence Crop Insurance Coverage Level Choices? Learning from the Experiences and Perceptions of Farmers</a></p>
+          <p class="meta">with Hongli Feng, David A. Hennessy, and Jennifer Ifft. <em>Agricultural Policy Review</em>, Winter 2025. Center for Agricultural and Rural Development, Iowa State University.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <h3>Mississippi State University</h3>
+      <ul class="courses">
+        <li><span class="course"><span class="code">AEC 6713</span>Quantitative Economics</span><span class="where">Graduate</span><span class="terms">Fall 2024 &middot; 2025 &middot; 2026</span></li>
+        <li><span class="course"><span class="code">AEC 3113</span>Introduction to Quantitative Economics</span><span class="where">Undergraduate</span><span class="terms">Spring 2025 &middot; Spring 2026<br>Fall 2026</span></li>
+      </ul>
+      <h3>Iowa State University</h3>
+      <ul class="courses">
+        <li><span class="course"><span class="code">ECON 101</span>Principles of Microeconomics</span><span class="where">Instructor</span><span class="terms">Fall 2023</span></li>
+        <li><span class="course">Principles of Microeconomics</span><span class="where">Teaching assistant</span><span class="terms">Fall 2019 &ndash; Spring 2021</span></li>
+      </ul>
+      <h3>Southwestern University of Finance and Economics</h3>
+      <ul class="courses">
+        <li><span class="course">Intermediate Microeconomics</span><span class="where">Teaching assistant</span><span class="terms">Fall 2016</span></li>
+      </ul>
+    </section>
+
+    <section id="cv">
+      <h2>CV</h2>
+      <div class="cv-row">
+        <a class="btn primary" href="XUCHE_GONG_CV_2026-09-23.pdf">Download CV (PDF)</a>
+        <p>Last updated September 2026</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Xuche Gong</span>
+    <span>Department of Agricultural Economics &middot; Mississippi State University</span>
+  </footer>
+</div>
+</body>
+</html>
